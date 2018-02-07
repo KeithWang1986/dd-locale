@@ -21,10 +21,16 @@ export class LocaleLabel extends React.Component {
 
     constructor(props, context) {
         super(props, context);
-        this.value = LocaleValue(this.context.locale, this.props.value);
+        this.locale = this.context.locale;
+        this.value = LocaleValue(this.locale, this.props.value);
     }
 
     render() {
+        if (this.context.locale !== this.locale) {
+            this.locale = this.context.locale;
+            this.value = LocaleValue(this.locale, this.props.value);
+            return this.value;
+        }
         return this.value;
     }
 }
@@ -49,9 +55,8 @@ export class LocaleProvider extends React.Component {
     getChildContext() {
         let current_locale = null;
         if (this.props.locale != null) {
-            current_locale = this.props.locale
+            current_locale = this.props.locale;
         }
-
         return {
             locale: current_locale
         };
