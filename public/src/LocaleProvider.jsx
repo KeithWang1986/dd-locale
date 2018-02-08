@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { PropTypes } from 'prop-types';
-import en_US from '../locales/en_US'
+import en_US from '../../locales/en_US'
 
 export function LocaleValue(locale, key) {
     const paths = key.split('.');
