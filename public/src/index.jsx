@@ -1,8 +1,8 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 import { LocaleProvider, LocaleLabel, LocaleValue } from './LocaleProvider.jsx';
-import zh_CN from '../locales/zh_CN';
-import en_US from '../locales/en_US';
+import zh_CN from '../../locales/zh_CN';
+import en_US from '../../locales/en_US';
 
 class App extends React.Component {
     constructor(props, context) {
